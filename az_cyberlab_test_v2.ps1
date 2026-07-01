@@ -135,7 +135,7 @@ Write-Host "RDP Access Allowed From: $sourcePrefix"
 
 Disconnect-AzAccount # Disconnect from Azure
 
-#RDP to VM and run the below code:
+#RDP to VM and run the below code to install hyper-V:
 #Set-ExecutionPolicy Bypass -Force
 #Invoke-WebRequest 'https://aka.ms/azlabs/scripts/hyperV-powershell' -Outfile SetupForNestedVirtualization.ps1
 #.\SetupForNestedVirtualization.ps1
