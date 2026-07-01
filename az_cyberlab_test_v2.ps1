@@ -1,3 +1,5 @@
+#This script will deploy a windows server 2025 azure VM. From there we will set up hyper-V and add two nested VMs, in order to setup a cyber security lab.
+
 # Variables
 $rgName = "az-cyberlab-rg"
 $location = "eastus2"
@@ -132,6 +134,13 @@ Write-Host "Public IP Address: $($publicIP.IpAddress)"
 Write-Host "RDP Access Allowed From: $sourcePrefix"
 
 Disconnect-AzAccount # Disconnect from Azure
+
+#RDP to VM and run the below code:
+#Set-ExecutionPolicy Bypass -Force
+#Invoke-WebRequest 'https://aka.ms/azlabs/scripts/hyperV-powershell' -Outfile SetupForNestedVirtualization.ps1
+#.\SetupForNestedVirtualization.ps1
+
+
 
 ## Once done with the lab, delete the resources created for this lab by running the commands below. Reconnecting to Azure, and then deleting the resource group.
 #Connnect-AzAccount
